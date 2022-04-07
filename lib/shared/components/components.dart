@@ -45,9 +45,12 @@ Widget defaultFormField({
   bool isPassword = false,
   required Function validate,
   required String label,
+  String? labelText,
   required IconData prefix,
   IconData?  suffix,
   final void  Function()? suffixPressed,
+
+
 
 
 }) => TextFormField(
@@ -63,7 +66,14 @@ Widget defaultFormField({
 
   },
   decoration: InputDecoration(
+    floatingLabelBehavior: FloatingLabelBehavior.always,
     hintText: label,
+    labelText: labelText,
+    hintStyle: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+
+    ),
     prefixIcon: Icon(
       prefix,
     ),
